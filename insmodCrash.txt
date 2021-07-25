@@ -1,0 +1,97 @@
+[  235.560000] Unable to handle kernel paging request at virtual address 95ff3c48
+[  235.570000] pgd = c93b4000
+[  235.570000] [95ff3c48] *pgd=00000000
+[  235.570000] Internal error: Oops: 5 [#1] PREEMPT SMP
+[  235.580000] last sysfs file: /sys/devices/pci0000:00/0000:00:0b.1/usb2/2-2/2-2:1.0/host0/target0:0:0/0:0:0:0/model
+[  235.590000] module:  NetUSB   bf85b000        160080
+[  235.590000] module:  GPL_NetUSB       bf854000        3743
+[  235.600000] module:  nf_conntrack_http        bf833000        6502
+[  235.600000] module:  guster   bf82d000        1270
+[  235.610000] module:  tdts_udbfw       bf815000        60359
+[  235.610000] module:  tdts_udb         bf7ec000        108041
+[  235.620000] module:  MultiSsidCntl    bf7e6000        3577
+[  235.620000] module:  tdts     bf779000        393522
+[  235.630000] module:  ip_set_hash_net  bf76d000        21054
+[  235.630000] module:  ip_set_hash_ipmark       bf762000        18468
+[  235.640000] module:  ip_set_list_set  bf75b000        6877
+[  235.640000] module:  ip_set_hash_netiface     bf74f000        22566
+[  235.650000] module:  ip_set_hash_ipmac        bf744000        18974
+[  235.650000] module:  ip_set_hash_mac  bf73c000        9401
+[  235.660000] module:  ip_set_hash_ip   bf731000        18232
+[  235.660000] module:  ip_set_hash_netportnet   bf724000        24686
+[  235.670000] module:  ip_set_hash_ipportnet    bf718000        23974
+[  235.670000] module:  ip_set_bitmap_port       bf711000        5717
+[  235.680000] module:  ip_set_hash_netport      bf705000        22514
+[  235.680000] module:  ip_set_hash_ipport       bf6fa000        18884
+[  235.690000] module:  ip_set_bitmap_ipmac      bf6f3000        6347
+[  235.690000] module:  ip_set_hash_netnet       bf6e7000        23954
+[  235.700000] module:  ip_set_hash_ipportip     bf6dc000        19704
+[  235.700000] module:  ip_set_bitmap_ip         bf6d5000        6393
+[  235.710000] module:  ip_set   bf6c7000        24648
+[  235.710000] module:  ipv6_spi         bf6b6000        39512
+[  235.720000] module:  ufsd     bf609000        625855
+[  235.720000] module:  jnl      bf5fa000        29136
+[  235.730000] module:  lctserial        bf5f4000        1434
+[  235.730000] module:  acos_nat         bf39a000        2367967
+[  235.740000] module:  ohci_hcd         bf38f000        18068
+[  235.740000] module:  ehci_hcd         bf380000        32066
+[  235.740000] module:  xhci_hcd         bf36c000        50278
+[  235.750000] module:  wl       bf04d000        2902141
+[  235.750000] module:  dpsta    bf046000        4952
+[  235.760000] module:  et       bf031000        51099
+[  235.760000] module:  igs      bf016000        13866
+[  235.770000] module:  emf      bf00b000        16478
+[  235.770000] module:  ctf      bf000000        16732
+[  235.770000] Modules linked in: NetUSB(P) GPL_NetUSB nf_conntrack_http guster(P) tdts_udbfw tdts_udb(P) MultiSsidCntl(P) tdts(P) ip_set_hash_net ip_set_hash_ipmark ip_set_list_set ip_set_hash_netiface ip_set_hash_ipmac ip_set_hash_mac ip_set_hash_ip ip_set_hash_netportnet ip_set_hash_ipportnet ip_set_bitmap_port ip_set_hash_netport ip_set_hash_ipport ip_set_bitmap_ipmac ip_set_hash_netnet ip_set_hash_ipportip ip_set_bitmap_ip ip_set ipv6_spi(P) ufsd(P) jnl lctserial acos_nat(P) ohci_hcd ehci_hcd xhci_hcd wl(P) dpsta(P) et(P) igs(P) emf(P) ctf(P) [last unloaded: ipv6_spi]
+[  235.820000] CPU: 1    Tainted: P             (2.6.36.4brcmarm+ #30)
+[  235.830000] PC is at module_finalize+0x20/0xa0
+[  235.830000] LR is at sys_init_module+0xe14/0x1868
+[  235.840000] pc : [<c0044f90>]    lr : [<c008e780>]    psr: a0000013
+[  235.840000] sp : c93bbf00  ip : 000002b0  fp : d6760de9
+[  235.850000] r10: 00000060  r9 : 00000028  r8 : bf88f7fc
+[  235.860000] r7 : 00000009  r6 : bf88f55c  r5 : bf892734  r4 : bf88f550
+[  235.860000] r3 : d6761afc  r2 : 95ff3c3c  r1 : d6761a5c  r0 : d6760000
+[  235.870000] Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment user
+[  235.880000] Control: 10c53c7d  Table: 893b404a  DAC: 00000015
+[  235.880000] Process insmod (pid: 11621, stack limit = 0xc93ba270)
+[  235.890000] Stack: (0xc93bbf00 to 0xc93bc000)
+[  235.890000] bf00: bf88f550 c008e780 bf88f550 c004043c d6760d1d c03dbf78 bf88f684 0006f0b8
+[  235.900000] bf20: 00000002 d6760000 00001f84 d6761a5c d6760d1d d6761474 cbdbf960 000007fc
+[  235.910000] bf40: 0000088c 00000000 00000000 0000001f 00000020 00000018 00000015 00000011
+[  235.920000] bf60: 00000000 00000000 cbe4bb60 00000004 cda42640 00000000 cbe4bb60 c00c14c4
+[  235.930000] bf80: cbe4bb60 00001f84 00000002 be8d1f75 00000080 c0040c48 c93ba000 00000000
+[  235.930000] bfa0: 00000000 c0040aa0 00001f84 00000002 0006f0c8 00001f84 0006f0b8 00000002
+[  235.940000] bfc0: 00001f84 00000002 be8d1f75 00000080 0005d1d5 00000013 000604a4 00000000
+[  235.950000] bfe0: be8cfae8 be8cfad8 0002ffb0 40399390 20000010 0006f0c8 00000000 00000000
+[  235.960000] [<c0044f90>] (PC is at module_finalize+0x20/0xa0)
+[  235.960000] [<c0044f90>] (module_finalize+0x20/0xa0) from [<c008e780>] (sys_init_module+0xe14/0x1868)
+[  235.970000] [<c008e780>] (sys_init_module+0xe14/0x1868) from [<c0040aa0>] (ret_fast_syscall+0x0/0x30)
+[  235.980000] Code: 0a000008 e59430e4 e3530000 0a000005 (e592000c)
+[  235.990000] ---[ end trace 7cc1feb01bc3612d ]---
+[  235.990000] Kernel panic - not syncing: Fatal exception
+[  236.000000] [<c0047250>] (unwind_backtrace+0x0/0xe4) from [<c03d51e8>] (panic+0x68/0x194)
+[  236.010000] [<c03d51e8>] (panic+0x68/0x194) from [<c0044548>] (die+0x194/0x1dc)
+[  236.020000] [<c0044548>] (die+0x194/0x1dc) from [<c004852c>] (__do_kernel_fault+0x64/0x84)
+[  236.020000] [<c004852c>] (__do_kernel_fault+0x64/0x84) from [<c0048710>] (do_page_fault+0x1c4/0x1d8)
+[  236.030000] [<c0048710>] (do_page_fault+0x1c4/0x1d8) from [<c00403a4>] (do_DataAbort+0x30/0x98)
+[  236.040000] [<c00403a4>] (do_DataAbort+0x30/0x98) from [<c04c318c>] (__dabt_svc+0x4c/0x60)
+[  236.050000] Exception stack(0xc93bbeb8 to 0xc93bbf00)
+[  236.060000] bea0:                                                       d6760000 d6761a5c
+[  236.060000] bec0: 95ff3c3c d6761afc bf88f550 bf892734 bf88f55c 00000009 bf88f7fc 00000028
+[  236.070000] bee0: 00000060 d6760de9 000002b0 c93bbf00 c008e780 c0044f90 a0000013 ffffffff
+[  236.080000] [<c04c318c>] (__dabt_svc+0x4c/0x60) from [<c0044f90>] (module_finalize+0x20/0xa0)
+[  236.090000] [<c0044f90>] (module_finalize+0x20/0xa0) from [<c008e780>] (sys_init_module+0xe14/0x1868)
+[  236.100000] [<c008e780>] (sys_init_module+0xe14/0x1868) from [<c0040aa0>] (ret_fast_syscall+0x0/0x30)
+[  236.110000] CPU0: stopping
+[  236.110000] [<c0047250>] (unwind_backtrace+0x0/0xe4) from [<c00402f0>] (do_IPI+0xfc/0x180)
+[  236.110000] [<c00402f0>] (do_IPI+0xfc/0x180) from [<c04c31e8>] (__irq_svc+0x48/0xe8)
+[  236.110000] Exception stack(0xc0509f78 to 0xc0509fc0)
+[  236.110000] 9f60:                                                       00000000 ce8dd200
+[  236.110000] 9f80: c0509fc0 00000000 c0508000 c0514bc8 c05380a8 c0514bc0 80000000 413fc090
+[  236.110000] 9fa0: 0000001f 00000000 c056bcd8 c0509fc0 c0041bb0 c0041bb4 60000013 ffffffff
+[  236.110000] [<c04c31e8>] (__irq_svc+0x48/0xe8) from [<c0041bb4>] (default_idle+0x24/0x28)
+[  236.110000] [<c0041bb4>] (default_idle+0x24/0x28) from [<c0041d1c>] (cpu_idle+0x40/0x94)
+[  236.110000] [<c0041d1c>] (cpu_idle+0x40/0x94) from [<c0008e4c>] (start_kernel+0x3b0/0x414)
+[  236.110000] [<c0008e4c>] (start_kernel+0x3b0/0x414) from [<80008138>] (0x80008138)
+[  236.110000] NVRAM LOG 16384 17701 34085
+[  236.110000] Rebooting in 3 seconds..Digital core power voltage set to 1.0V

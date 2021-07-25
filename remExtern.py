@@ -196,14 +196,21 @@ def patchVermagic(kernVers):
         if str(i[1][0:len(vmStr)]) == str(vmStr):
             br.write(i[0], kernVers + '\x00')
 
-def patchSymtab(symName):
+# overwrite the symbol's st_name with another symbol's st_name.
+def patchSymtab(symName, repName):
+    # get symbol address
     symAddr = findSymByName(symName)
-    printkAddr = findSymByName('printk')
+    # print('found symbol at {}'.format(symAddr))
+    # get replacement address
+    repAddr = findSymByName(repName)
+    # get each symbol from addresses
     curTempDataName = br.get_symbol_at(symAddr)
-    printkTempDataName = br.get_symbol_at(printkAddr)
+    repTempDataName = br.get_symbol_at(repAddr)
+    # get the symbol's st_name offset
     nameOffset = fetchStructMemOff(curTempDataName.name, 'st_name')
-    printkStrValue = fetchStructMem(printkTempDataName.name, 'st_name')
-    br.write(nameOffset[0], printkStrValue)
+    # get the replacement's st_name value
+    repStrValue = fetchStructMem(repTempDataName.name, 'st_name')
+    br.write(nameOffset[0], repStrValue)
     return 0
 
 def findExtVers(versName):
@@ -237,7 +244,7 @@ def fixBinary(kernVers, *args):
     for i in args:
         patchReloc(i)
         patchExtVers(i)
-        patchSymtab(i)
+        patchSymtab(i, 'printk')
     return 0
 
 def fetchName(symIndex):
